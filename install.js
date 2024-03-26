@@ -35,3 +35,25 @@ connection.query(`CREATE TABLE Course (
 
         console.log("table created: " + result);
     })
+
+    //kommandet för att lägga till kurser i tabellen course
+let query = "INSERT INTO Course (courseID, School, courseName, Progression, Syllabus) VALUES ?"
+
+// de kurser jag ska lägga till i tabellen course
+let courses = [
+    ['dt057g', 'Mittuniversitetet', 'Webbutveckling I', 'A', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT057G/'],
+    ['dt084g', 'Mittuniversitetet', 'Introduktion till programmering i JavaScript', 'A', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT084G/'],
+    ['dt200g', 'Mittuniversitetet', 'Grafisk teknik för webb', 'A', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT200G/'],
+    ['dt068g', 'Mittuniversitetet', 'Webbanvändbarhet', 'B', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT068G/'],
+    ['dt003g', 'Mittuniversitetet', 'Databaser', 'A', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT003G/'],
+    ['dt211g', 'Mittuniversitetet', 'Frontend-baserad webbutveckling', 'B', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT211G/'],
+    ['1ME321', 'Linneuniversitetet', 'Webbteknik 1', null, 'https://kursplan.lnu.se/kursplaner/kursplan-1ME321-4.pdf'],
+    ['1ME322', 'Linneuniversitetet', 'Webbteknik 2', null, 'https://kursplan.lnu.se/kursplaner/kursplan-1ME322-2.1.pdf']
+];
+
+// gör en query mot servern med query som kommandet och courses som datan som läggs in
+connection.query(query, [courses], (err, results) => {
+    if (err) throw err;
+
+    console.table(results)
+});

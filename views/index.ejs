@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <script type="module" src="js/menu.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg"
+                alt="logotyp"></a>
+        <h1>Kurser</h1>
+        <nav id="pc_nav">
+            <ul>
+                <li class="currentSite"><a href="/">Kurser</a></li>
+                <li><a href="/about_site">Om sidan</a></li>
+                <li><a href="/add_course">Lägg till kurs</a></li>
+            </ul>
+        </nav>
+        <button type="button" aria-label="Öpnna navigeringsmeny" id="mobile_btn"><img src="bilder/bars-solid.svg"
+                alt="Navigeringsmeny"></button>
+        <div id="mobile_menu">
+            <nav id="mobile_nav">
+                <button type="button" aria-label="Stäng navigeringsmeny" id="mobile_btn_close"><img
+                        src="bilder/xmark-solid.svg" alt="Navigeringsmeny"></button>
+                <ul>
+                    <li class="currentSite"><a href="/"><span>Kurser</span></a></li>
+                    <li><a href="/about_site"><span>Om sidan</span></a></li>
+                    <li><a href="/add_course"><span>Lägg till kurs</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>

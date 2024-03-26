@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    border-bottom: 2px solid black;
+    height: 80px;
+}
+
+header>a {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header>a img {
+    height: 100%;
+}
+
+
+header h1 {
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+#pc_nav {
+    visibility: hidden;
+    position: absolute;
+}
+
+header button {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 10px;
+}
+
+header button img {
+    height: 100%;
+}
+
+#mobile_menu {
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 0;
+}
+
+#mobile_menu ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    list-style: none;
+}
+
+#mobile_menu ul li {
+    margin: 20px auto;
+    text-align: center;
+    width: 120px;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: 1px solid black;
+}
+
+#mobile_menu ul li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: black;
+}
+
+.currentSite {
+    background-color: lightblue;
+}
+
+@media screen and (max-width: 400px) {
+
+    header {
+        height: 160px;
+    }
+
+    header h1 {
+        left: 50%;
+        top: 70%;
+    }
+
+}
+
+@media screen and (min-width: 901px) {
+
+
+    header h1 {
+        position: absolute;
+        left: 40%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.4rem;
+    }
+
+    #pc_nav {
+        visibility: visible;
+        width: 400px;
+        height: 100%;
+        right: 5%;
+        top: 0;
+    }
+
+    #pc_nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 40px;
+        transform: translate(0, -50%);
+        list-style: none;
+    }
+
+    #pc_nav ul li {
+        padding: 5px;
+        font-size: 1.2rem;
+    }
+
+    #pc_nav ul li a {
+        color: black;
+    }
+
+    #pc_nav ul li a:hover {
+        color: darkcyan;
+    }
+
+
+    #mobile_btn {
+        visibility: hidden;
+    }
+
+    #mobile_menu {
+        visibility: hidden;
+    }
+
+    .currentSite {
+        background-color: initial;
+        border: 2px solid black;
+        margin-top: -2px;
+    }
+
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,10 @@
     <script type="module" src="js/menu.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg"
-                alt="logotyp"></a>
+        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg" alt="logotyp"></a>
         <h1>Kurser</h1>
         <nav id="pc_nav">
             <ul>
@@ -33,5 +34,22 @@
             </nav>
         </div>
     </header>
+    <main>
+        <div>
+            
+        </div>
+        <div>
+            <% courses.forEach((course)=> { %>
+                <div>
+                    <p><%= course.courseID %></p>
+                    <p><%= course.school %></p>
+                    <p><%= course.courseName %></p>
+                    <p><%= course.Progression %></p>
+                    <p><%= course.Syllabus %></p>
+                </div>
+                <% }); %>
+        </div>
+    </main>
 </body>
+
 </html>

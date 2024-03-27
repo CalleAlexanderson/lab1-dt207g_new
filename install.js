@@ -36,8 +36,8 @@ connection.query(`CREATE TABLE Course (
         console.log("table created: " + result);
     })
 
-    //kommandet för att lägga till kurser i tabellen course
-let query = "INSERT INTO Course (courseID, School, courseName, Progression, Syllabus) VALUES ?"
+//kommandet för att lägga till kurser i tabellen course
+const query = "INSERT INTO Course (courseID, School, courseName, Progression, Syllabus) VALUES ?"
 
 // de kurser jag ska lägga till i tabellen course
 let courses = [

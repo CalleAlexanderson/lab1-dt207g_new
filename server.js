@@ -34,6 +34,7 @@ app.get("/", (req, res) => {
         if (err) {
             console.log(err.message);
         } else {
+            console.log(result);
             res.render("index", {
                 courses: result
             })
@@ -48,11 +49,10 @@ app.get('/about_site', (req, res) => {
 
 // lägger till en sökväg till add_course.ejs
 app.get('/add_course', (req, res) => {
-    res.render('add_course');
-});
-
-app.get("/a", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
+    let msg = "";
+    res.render("add_course", {
+        message: msg
+    })
 });
 
 
@@ -66,15 +66,22 @@ app.post('/add_course', (req, res) => {
     console.log("formulär skickat");
 
     const queryStmt = "INSERT INTO Course (courseID, School, courseName, Progression, Syllabus) VALUES ?"
-    let newCourse = [
-        [courseId, school, name, progression, syllabus]
-    ];
-
-    db.query(queryStmt, [newCourse], (err, results) => {
-        if (err) throw err;
-
-        console.table(results)
-    });
+    let msg = "Var snäll och fyll i alla fält";
+    if (courseId != "" && school != "" && name != "" && syllabus != "") { //kollar inte progression för den ska kunna vara null om det är en ensamstående kurs
+        let newCourse = [
+            [courseId, school, name, progression, syllabus]
+        ];
+    
+        db.query(queryStmt, [newCourse], (err, results) => {
+            if (err) throw err;
+    
+            console.table(results)
+        });
+    } else{
+        res.render("add_course", {
+            message: msg
+        })
+    }
 
 });
 

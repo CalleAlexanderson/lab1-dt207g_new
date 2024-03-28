@@ -1,0 +1,64 @@
+.courseDiv{
+    width: 90%;
+    max-width: 400px;
+    margin: 0px auto 10px;
+    border: 2px solid black;
+    position: relative;
+    padding: 5px;
+    background-color: white;
+}
+ main{
+    background-color: gray;
+    padding-top: 10px;
+ }
+
+.courseDiv p, .courseDiv a{
+    font-size: 1.2rem;
+}
+
+.remove{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+.courseDiv > *{
+    padding: 5px;
+}
+
+form {
+    margin: 20px auto;
+    width: 300px;
+}
+
+form input{
+    margin: 2px 0px 15px 5px;
+}
+
+legend{
+    border: 1px solid black;
+    padding: 1px;
+    background-color: white;
+}
+
+fieldset >*{
+    margin: 0 5px;
+}
+
+fieldset{
+    padding-top: 5px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+#err_message{
+    background-color: white;
+    border: 2px solid black;
+    color: red;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    width: 300px;
+    height: 32px;
+    font-size: 1.6rem;
+}

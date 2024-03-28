@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/menu.js"></script>
     <title>Document</title>
 </head>
@@ -36,19 +37,30 @@
     </header>
     <main>
         <div>
-            
+
         </div>
         <div>
             <% courses.forEach((course)=> { %>
-                <div>
-                    <p><%= course.courseID %></p>
-                    <p><%= course.school %></p>
-                    <p><%= course.courseName %></p>
-                    <p><%= course.Progression %></p>
-                    <p><%= course.Syllabus %></p>
+                <div class="courseDiv">
+                    <h2>
+                        <%= course.courseName %>
+                    </h2>
                     <p>
-                        <a href="/delete/<%= course.courseID %>">Ta bort kurs</a>
+                        <%= course.School %>
                     </p>
+                    <p>
+                        Kurskod: <%= course.courseID %>
+                    </p>
+
+                    <p>
+                        <%if(course.Progression !=null){%>
+                            Progression: <%= course.Progression %>
+                                <% } else {%>
+                                    Ensamestående kurs
+                                    <% } %>
+                    </p>
+                    <a href="<%= course.Syllabus %>">Kursplan</a>
+                    <a class="remove" href="/delete/<%= course.courseID %>">Ta bort kurs</a>
                 </div>
                 <% }); %>
         </div>

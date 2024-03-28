@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="js/menu.js"></script>
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Lägg till kurs</title>
 </head>
 
 <body>
     <header>
-        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg"
-                alt="logotyp"></a>
+        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg" alt="logotyp"></a>
         <h1>Lägg till kurs</h1>
         <nav id="pc_nav">
             <ul>
@@ -37,23 +37,29 @@
     </header>
     <main>
         <form method="post">
-            <label for="code">Kurskod:</label><br>
-            <input type="text" id="code" name="code"><br> 
+            <fieldset>
+                <legend>Lägg till kurs</legend>
+                <label for="code">Kurskod:</label><br>
+                <input type="text" id="code" name="code"><br>
 
-            <label for="school">Kurskod:</label><br>
-            <input type="text" id="school" name="school"><br> 
+                <label for="school">Lärosäte:</label><br>
+                <input type="text" id="school" name="school"><br>
 
-            <label for="name">Kursnamn:</label><br>
-            <input type="text" id="name" name="name"><br> 
+                <label for="name">Kursnamn:</label><br>
+                <input type="text" id="name" name="name"><br>
 
-            <label for="prog">Progression:</label><br>
-            <input type="text" id="prog" name="prog"><br> 
+                <label for="prog">Progression:</label><br>
+                <input type="text" id="prog" name="prog" maxlength="1"><br>
 
-            <label for="syll">Studieplan:</label><br>
-            <input type="text" id="syll" name="syll"><br> 
-            
-            <input type="submit" value="add course">
+                <label for="syll">Studieplan:</label><br>
+                <input type="text" id="syll" name="syll"><br>
+
+                <input type="submit" value="add course">
+            </fieldset>
         </form>
+        <p id="err_message">
+            <%= message %>
+        </p>
     </main>
 </body>
 

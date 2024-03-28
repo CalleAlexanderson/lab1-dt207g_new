@@ -78,6 +78,21 @@ app.post('/add_course', (req, res) => {
 
 });
 
+// när man klickar på en länk med /delete/ i sig körs den här
+app.get("/delete/:cId", (req, res) => {
+    console.log("params: "+req.params.cId);
+    let courseId = req.params.cId; //req.params tar data från länken man klickat på
+
+    // tar bort en kurs från databasen där courseID matchar parametern som skickats med i länken
+    db.query("delete from course where courseID=?;", courseId, (err) => {
+        if (err) {
+            console.log(err.message);
+        }
+
+        res.redirect("/"); // skickar tillbaka användaren till sidan den kom ifrån så du inte fastnar på sidan localhost:3000/delete/courseID 
+    })
+})
+
 // app aktiveras när port(3000) söks på(vet inte korrekt term)
 app.listen(port, () => {
     console.log("appen lyssnar");

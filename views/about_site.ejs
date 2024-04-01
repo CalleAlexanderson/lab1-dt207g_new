@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,10 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Om sidan</title>
 </head>
+
 <body>
     <header>
-        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg"
-                alt="logotyp"></a>
+        <a href="/" aria-label="Tillbaks till startsida"><img src="bilder/placeholder logo.svg" alt="logotyp"></a>
         <h1>Om sidan</h1>
         <nav id="pc_nav">
             <ul>
@@ -34,8 +35,45 @@
             </nav>
         </div>
     </header>
-    <main>
-        
+    <main id="about_main">
+        <article>
+            <h2>Webbplatsens syfte</h2>
+            <p>Webbplatsens syfte är att fungera som ett CV där man kan se vilka kurser jag avklarat på universitets
+                nivå.</p>
+        </article>
+        <article>
+            <h2>MySQL</h2>
+            <p>Jag har använt mig av MySQL(MariaDB) för att skapa databasen, databasen skapas XAMPP control panels
+                phpadmin. Jag skapar en användare och databas med samma namn som sedan ansluts till med en javascript
+                fil
+                där allting i databasen skapas.
+            </p><br>
+            <p>För att skapa webbsidorna har jag en annan JS fil (som också anlsuter till databasen) och i denna fil har
+                jag mina renders till webbsidorna som använder express och view engine EJS för att skapa sitt innehåll
+                och den interaktion som finns mellan webbsidorna och databasen.
+            </p><br>
+            <p>
+                De interaktioner som webbsidan har med databasen är att det går att ta bort, lägga till och läsa ut de
+                olika kurser som ligger på databasen. Detta görs med &lt;% %&gt; EJS syntaxet. Datan som skickas in til
+                databasen skickas inte direkt utan skickas i formen av ett kommand (t.ex. "INSERT INTO Course (courseID,
+                School, courseName, Progression, Syllabus) VALUES ?) och sen värdena, när detta skickas in till servern
+                byts frågetecknet ut mot de värden som skickades med.
+            </p>
+        </article>
+        <article>
+            <h2>Slutsatser</h2>
+            <p>Det som jag tycker verkar bra med databaser är funktionen att i efterhand kunna ändra data, jag har
+                tidigare (innan jag började på MIUN) försökt bygga en webbsida där jag lagrar data till ett rollspel jag
+                och några kompisar spelar och tänkte då att det bästa sättet att kunna lagra datan var att använda JSON
+                filer som jag manuellt uppdaterade när något skulle ändras men efter denna labb så har jag lärt mig att
+                en databas fyller nog den funktionen som jag letar efter bättre. <br> <br> Jag kan känna att det är lite mäckigt
+                att behöva hela tiden start servern igen när något ändras (fick inte nodemon att funka på min dator) och
+                det stör mig väldigt mycket att inte kunna använda SASS just nu då jag vant mig vid det efter förra
+                kursen och det känns som en steg tillbaka i tiden nu att behöva använda vanlig css. En sak som jag märkt
+                i jämförelse med databas kursen är hur ER-diagram visades, jag har nu gjort mitt i det format som vi
+                lärde oss i database kursen men det kanske inte är det som borde göras framöver.</p>
+        </article>
     </main>
 </body>
+
 </html>

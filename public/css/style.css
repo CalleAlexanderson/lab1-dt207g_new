@@ -62,3 +62,18 @@ fieldset{
     height: 32px;
     font-size: 1.6rem;
 }
+
+#about_main >*{
+    width: 80%;
+    max-width: 500px;
+    margin: 10px auto;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#about_main p{
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    
+}

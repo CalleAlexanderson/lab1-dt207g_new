@@ -50,8 +50,10 @@ app.get('/about_site', (req, res) => {
 // lägger till en sökväg till add_course.ejs
 app.get('/add_course', (req, res) => {
     let msg = "";
+    let linkmsg = "";
     res.render("add_course", {
-        message: msg
+        message: msg,
+        linkmessage: linkmsg
     })
 });
 
@@ -66,7 +68,7 @@ app.post('/add_course', (req, res) => {
     console.log("formulär skickat");
 
     const queryStmt = "INSERT INTO Course (courseID, School, courseName, Progression, Syllabus) VALUES ?"
-    let msg = "Var snäll och fyll i alla fält";
+    
     if (courseId != "" && school != "" && name != "" && syllabus != "") { //kollar inte progression för den ska kunna vara null om det är en ensamstående kurs
         let newCourse = [
             [courseId, school, name, progression, syllabus]
@@ -77,9 +79,18 @@ app.post('/add_course', (req, res) => {
     
             console.table(results)
         });
-    } else{
+        let msg = 'En ny kurs har lagts till, kolla in den:';
+        let linkmsg = "Kurser";
         res.render("add_course", {
-            message: msg
+            message: msg,
+            linkmessage: linkmsg
+        })
+    } else{
+        let msg = "Var snäll och fyll i alla fält";
+        let linkmsg = "";
+        res.render("add_course", {
+            message: msg,
+            linkmessage: linkmsg
         })
     }
 
